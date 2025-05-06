@@ -17,7 +17,7 @@ import os
 load_dotenv()  # Load environment variables from .env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR =Path(os.getenv('BASE_DIR','')) or Path(__file__).resolve().parent.parent
+BASE_DIR =Path(os.getenv('BASE_DIR',Path(__file__).resolve().parent.parent))
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
 
 
