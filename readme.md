@@ -147,6 +147,6 @@ All done! 🎉 Your task manager is up and running locally.
   - Django API: http://localhost:8000/api
 
 - **Deployed Version**:
-  Access the deployed React application at [https://task-manager-app-demo.netlify.app](https://task-manager-app-demo.netlify.app)
+  Access the deployed React application at **[https://living-things-task-list.netlify.app](https://living-things-task-list.netlify.app)**
 
-  Note: The deployed version connects to backend services that may be hosted separately.
+  Note: The deployed version connects to backend services that are hosted separately.
