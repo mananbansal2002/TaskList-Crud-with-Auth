@@ -61,6 +61,7 @@ REACT_APP_API_URL=http://localhost:3001
 
 # taskmanager_backend/.env
 CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
+ALLOWED_HOSTS=127.0.0.1,localhost
 ```
 
 ### 2. Run All Servers

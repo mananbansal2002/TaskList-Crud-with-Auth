@@ -16,6 +16,7 @@ REM Create .env for taskmanager_backend
 echo Creating .env for taskmanager_backend...
 (
 echo CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
+echo ALLOWED_HOSTS=127.0.0.1,localhost
 ) > taskmanager_backend\.env
 
 echo All .env files created successfully.
