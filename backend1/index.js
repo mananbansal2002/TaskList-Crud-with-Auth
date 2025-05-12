@@ -57,7 +57,8 @@ app.get('/tasks', async (req, res) => {
     const username = decoded.username;
 
     const response = await axios.get(
-      `${DJANGO_URL}/tasks/?username=${username}`
+      `${DJANGO_URL}/tasks/?username=${username}`,
+      { headers: req.headers }
     );
     res.json({
       tasks: response.data,
@@ -88,7 +89,9 @@ app.post('/tasks', async (req, res) => {
       due_date,
       created_by: decoded.username,
     };
-    const response = await axios.post(`${DJANGO_URL}/tasks/`, taskData);
+    const response = await axios.post(`${DJANGO_URL}/tasks/`, taskData, {
+      headers: req.headers,
+    });
 
     res.json(response.data);
   } catch (err) {
@@ -118,7 +121,9 @@ app.put('/tasks/:id', async (req, res) => {
       due_date,
       created_by: decoded.username,
     };
-    const response = await axios.put(`${DJANGO_URL}/tasks/${id}/`, taskData);
+    const response = await axios.put(`${DJANGO_URL}/tasks/${id}/`, taskData, {
+      headers: req.headers,
+    });
 
     res.json(response.data);
   } catch (err) {
@@ -137,7 +142,9 @@ app.delete('/tasks/:id', async (req, res) => {
 
     const { id } = req.params;
 
-    const response = await axios.delete(`${DJANGO_URL}/tasks/${id}/`);
+    const response = await axios.delete(`${DJANGO_URL}/tasks/${id}/`, {
+      headers: req.headers,
+    });
 
     res.json({ message: 'Task deleted successfully' });
   } catch (err) {
